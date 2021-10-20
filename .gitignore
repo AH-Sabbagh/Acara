@@ -5,3 +5,4 @@ appsettings.json
 .suo
 .vs/acara/DesignTimeBuild/.dtbcache.v2
 API/Insert.sql
+/.editorconfig
