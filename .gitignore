@@ -6,4 +6,3 @@ appsettings.json
 .vs/acara/DesignTimeBuild/.dtbcache.v2
 API/Insert.sql
 /.editorconfig
-/Infrastructure/Data/Migrations
