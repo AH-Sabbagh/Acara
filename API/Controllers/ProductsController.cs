@@ -57,14 +57,14 @@ namespace API.Controllers
             if (product == null) return NotFound(new ApiResponse(404));
             return _mapper.Map<Product, ProductToReturnDto>(product);
         }
-        [HttpGet]
-        //[HttpGet("{brands}")]
+        //[HttpGet]
+        [HttpGet("brands")]
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
         {
             return Ok(await _productBrandRepo.ListAllAsync());
         }
         [HttpGet]
-        //[HttpGet("{types}")]
+        [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProducttypes()
         {
             return Ok(await _productTypeRepo.ListAllAsync());
