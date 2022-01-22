@@ -1,6 +1,13 @@
+<ngx-spinner
+  size="medium"
+  [fullScreen]="true"
+  >
+  <p style="color: black">Loading...</p>
+</ngx-spinner>
+
 <app-nav-bar></app-nav-bar>
+<app-section-header></app-section-header>
 
-<div class="container" style="margin-top: 140px;;">
- <router-outlet></router-outlet>
-
-</div> 
+<div >
+  <router-outlet></router-outlet>
+</div>
