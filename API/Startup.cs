@@ -7,6 +7,7 @@ using Infrastructure.Data;
 using API.Helpers;
 using API.Middleware;
 using API.Extentions;
+using StackExchange.Redis;
 
 namespace API
 {
@@ -26,6 +27,13 @@ namespace API
             services.AddControllers();
             services.AddDbContext<StoreContext>(x =>
                                  x.UseSqlite(_config.GetConnectionString("Default")));
+                                 
+            services.AddSingleton<ConnectionMultiplexer>(c =>
+            {
+                var congiguration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(congiguration);
+            });
+
             services.AddApplicationServices();
             services.AddSwaggerDocumantation();
             services.AddCors(opt =>
